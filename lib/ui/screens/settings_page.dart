@@ -12,12 +12,16 @@ class SettingsPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Settings'),
       ),
-      body: SwitchListTile(
-        title: Text('Dark Mode'),
-        value: themeCubit.state,
-        onChanged: (bool value) {
-          themeCubit.toggleTheme();
-        },
+      body: Column(
+        children: [
+          SwitchListTile(
+            title: Text('Dark Mode'),
+            value: themeCubit.state,
+            onChanged: (bool value) {
+              themeCubit.toggleTheme();
+            },
+          ),
+        ],
       ),
     );
   }
